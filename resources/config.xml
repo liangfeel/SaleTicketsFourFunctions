@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+	<bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">               
+                   <!-- 线程池活跃的线程数 -->   
+		<property name="corePoolSize" value="5" /> 
+                    <!-- 线程池最大活跃的线程数 -->  
+		<property name="maxPoolSize" value="10" /> 
+                    <!-- 队列的最大容量 -->  
+		<property name="queueCapacity" value="25" />
+	</bean>
+	<bean id="taskExecutorExample" class="powercn.TaskExecutorExample"> 
+		<constructor-arg ref="taskExecutor" />
+	</bean>
